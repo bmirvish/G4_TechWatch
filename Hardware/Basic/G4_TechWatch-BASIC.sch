@@ -4019,8 +4019,10 @@ http://ww1.microchip.com/downloads/en/DeviceDoc/MIC550X.pdf&lt;/il&gt;
 
 SDA / P0.25 / pin2 / D25
 SCL / P0.26 / pin3 / D26
-none / P0.27 / pin4 / D27
-none / P0.28 / pin5 / D28_or_A4 / (low drive, low frequency IO)
+none / P0.27 / pin4 / D27 
+-&gt; Used D27 for CHRG.STAT
+none / P0.28 / pin5 / D28_or_A4 / (low drive, low frequency IO) 
+-&gt; Used A4 for Battery Measurement
 none / P0.29 / pin6 / D29_or_A5 / (low drive, low frequency IO)
 none / P0.30 / pin7 / D30_or_A6
 none / P0.31 / pin8 / D31_or_A7 / (used for battery level monitoring on Adafruit boards)</text>
@@ -5258,6 +5260,11 @@ Analog Outputs</text>
 <wire x1="134.62" y1="-63.5" x2="137.16" y2="-63.5" width="0.1524" layer="91"/>
 <label x="134.62" y="-73.66" size="1.27" layer="95" xref="yes"/>
 </segment>
+<segment>
+<pinref part="U2" gate="G$1" pin="P0.27"/>
+<wire x1="78.74" y1="106.68" x2="76.2" y2="106.68" width="0.1524" layer="91"/>
+<label x="76.2" y="106.68" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
 </net>
 <net name="USB-" class="0">
 <segment>
@@ -5269,14 +5276,6 @@ Analog Outputs</text>
 <segment>
 <wire x1="88.9" y1="-63.5" x2="93.98" y2="-63.5" width="0.1524" layer="91"/>
 <label x="93.98" y="-63.5" size="1.27" layer="95" xref="yes"/>
-</segment>
-</net>
-<net name="BATT" class="0">
-<segment>
-<pinref part="R13" gate="G$1" pin="1"/>
-<pinref part="R14" gate="G$1" pin="2"/>
-<wire x1="190.5" y1="-48.26" x2="190.5" y2="-43.18" width="0.1524" layer="91"/>
-<label x="190.5" y="-45.72" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="VIN" class="0">
@@ -5363,6 +5362,19 @@ Analog Outputs</text>
 <wire x1="434.34" y1="17.78" x2="429.26" y2="17.78" width="0.1524" layer="91"/>
 <junction x="429.26" y="17.78"/>
 <label x="429.26" y="10.16" size="1.27" layer="95" ratio="15" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="AIN4/BATT" class="0">
+<segment>
+<pinref part="U2" gate="G$1" pin="P0.28/AIN4"/>
+<wire x1="78.74" y1="104.14" x2="76.2" y2="104.14" width="0.1524" layer="91"/>
+<label x="76.2" y="104.14" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="R13" gate="G$1" pin="1"/>
+<pinref part="R14" gate="G$1" pin="2"/>
+<wire x1="190.5" y1="-48.26" x2="190.5" y2="-43.18" width="0.1524" layer="91"/>
+<label x="190.5" y="-45.72" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 </nets>
